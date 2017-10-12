@@ -31,9 +31,18 @@ func method2()  {
   p2.call();
 }
 
+/**
+* 第三种方法
+**/
+func method3()  {
+  var p1 = NokiaPhone{number: 1, desc:"I'm Nokias'"};
+  p1.call();
+}
+
 func main()  {
   method1();
   method2();
+  method3();
 }
 
 // OOP
