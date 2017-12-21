@@ -14,7 +14,7 @@ func main()  {
 
   var num1 Integer = 123;
   var ptr *Integer = &num1;
-
+  
   fmt.Printf("%x=%d",ptr,*ptr)
 }
 

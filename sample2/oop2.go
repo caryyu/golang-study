@@ -38,10 +38,10 @@ func method2()  {
   p2.call();
 }
 
-func main()  {
-  method1();
-  method2();
-}
+// func main()  {
+//   method1();
+//   method2();
+// }
 
 // OOP
 type PhoneAction interface {

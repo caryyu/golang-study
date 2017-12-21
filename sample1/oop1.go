@@ -39,11 +39,11 @@ func method3()  {
   p1.call();
 }
 
-func main()  {
-  method1();
-  method2();
-  method3();
-}
+// func main()  {
+//   method1();
+//   method2();
+//   method3();
+// }
 
 // OOP
 type Phone interface {
