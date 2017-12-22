@@ -1,6 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"os"
+	"strings"
+)
 
 // Integer ...
 type Integer int32
@@ -9,15 +14,36 @@ func checkIf(i Integer) bool {
 	return i > 10
 }
 
+func env2map(env []string) map[string]string {
+	m := make(map[string]string, len(env))
+	for _, s := range env {
+		d := strings.Split(s, "=")
+		m[d[0]] = d[1]
+	}
+	return m
+}
+
 func main() {
-	fmt.Println("Hello World")
-	hello()
-	fmt.Println(checkIf(11))
+	var pwd, err = os.Getwd()
 
-	var num1 Integer = 123
-	var ptr = &num1
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	fmt.Printf("%x=%d", ptr, *ptr)
+	log.Println(pwd)
+
+	var varMap = env2map(os.Environ())
+
+	log.Println(varMap)
+
+	// fmt.Println("Hello World")
+	// hello()
+	// fmt.Println(checkIf(11))
+
+	// var num1 Integer = 123
+	// var ptr = &num1
+
+	// fmt.Printf("%x=%d", ptr, *ptr)
 }
 
 func hello() {
